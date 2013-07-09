@@ -1,0 +1,73 @@
+/*------------------------------------*\
+    $CLOCK
+\*------------------------------------*/
+/**
+ * Used to style the clock element.
+ *
+ * Usage:
+ *
+ *  <div class="datetime"></div>
+ *
+ *  !! Must use the jQuery plugin for this to
+ *     render correctly.
+ */
+
+.datetime {
+    position:relative;
+    width:200px;
+}
+
+    .date{
+        position:relative;
+        width:inherit;
+        height:50px;
+
+        margin-top:10px;
+        margin-left:auto;
+        margin-right:auto;
+
+        font-size:2em;
+        color:#4c494a;
+        text-align:center;
+    }
+
+        .day,
+        .month,
+        .year{
+        }
+
+            .day{
+            }
+
+            .month{
+            }
+
+            .year{
+            }
+
+    .time{
+        width:inherit;
+        position:relative;
+
+        margin-left:auto;
+        margin-right:auto;
+
+
+        color:#4c494a;
+        font-size:2em;
+        text-align:center;
+    }
+        .sec,
+        .min,
+        .hour,
+        .ampm{
+        }
+
+            .sec{
+            }
+
+            .min{
+            }
+
+            .hour{
+            }
