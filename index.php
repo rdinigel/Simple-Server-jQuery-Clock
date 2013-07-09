@@ -41,9 +41,9 @@
                 Set the datetime variable in `PHP`. Best way would be by the `new DateTime()` function.
             </p>
             <pre>
-                $('.datetime').simpleServerClock({
-                    serverDatetime: "<?php echo $datetime->format('Y/m/d H:i:s'); ?>"
-                });
+            $('.datetime').simpleServerClock({
+                serverDatetime: "<?php echo htmlentities("<?php"); ?> echo $datetime->format('Y/m/d H:i:s'); <?php echo htmlentities("?>"); ?>"
+            });
             </pre>
         </div><!--
 

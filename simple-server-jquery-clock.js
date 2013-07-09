@@ -54,7 +54,7 @@
                 + '</div>');
 
         setInterval( function() {
-            $('.'+prefix+'date > .day').html(days[$datetime.getDay()]);
+            $('.'+prefix+'date > .day').html(days[$datetime.getDay()]+' '+$datetime.getUTCDate());
             $('.'+prefix+'date > .month').html(months[$datetime.getMonth()]);
             $('.'+prefix+'date > .year').html($datetime.getFullYear());
             $('.'+prefix+'time > .hour').html($datetime.getHours() < 10 ? '0'+$datetime.getHours() : $datetime.getHours());
