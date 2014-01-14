@@ -1,6 +1,6 @@
 <?php
 
-    date_default_timezone_set('America/New_York');
+    date_default_timezone_set('Europe/London');
     $datetime = new DateTime();
 
 ?>
@@ -17,6 +17,9 @@
             font-size:3em;
         }
     </style>
+    <script>
+        var server = new Date("<?php echo $datetime->format('Y/m/d H:i:s'); ?>");
+    </script>
 </head>
 <body class="wrapper">
 
@@ -42,7 +45,7 @@
             </p>
             <pre>
             $('.datetime').simpleServerClock({
-                serverDatetime: "<?php echo htmlentities("<?php"); ?> echo $datetime->format('Y/m/d H:i:s'); <?php echo htmlentities("?>"); ?>"
+                serverDatetime: true,
             });
             </pre>
         </div><!--
@@ -54,9 +57,9 @@
         <div class="grid__item one-whole">
             <h4>Plugin Options</h4>
             <pre>
-                serverDatetime : <string>  Date Format: Y/m/d/ H:i:s
-                seperator      : <string>  Default `:`
-                prefix         : <boolean> Default `false`
+                serverDatetime : boolean, Default `false`
+                seperator      : string, Default `:`
+                prefix         : boolean, Default `false`
             </pre>
         </div>
 

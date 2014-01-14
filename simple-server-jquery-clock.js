@@ -13,7 +13,7 @@
 
     $.fn.simpleServerClock = function(options) {
         var
-            settings = $.extend(
+            settings  = $.extend(
                                 {},
                                 {
                                     serverDatetime : false,
@@ -22,22 +22,19 @@
                                 },
                                 options
                             ),
-            prefix   = '',
-            months   = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'],
-            days     = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-
-        if ( settings.serverDatetime != false ) {
-            var
-                $datetime = new Date(settings.serverDatetime),
-                $localTime = new Date(),
-                $timeDiff  = $datetime.getTime() - $localTime;
-        } else {
+            prefix    = '',
+            months    = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'],
+            days      = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
             $datetime = new Date();
-        }
 
         if ( settings.multi ) {
             prefix = Math.floor(Math.random() * 1000) + 2 + '--';
         }
+
+        if (settings.serverDatetime) {
+            $datetime = $datetime.setTime($datetime.getTime() + $datetime.getTimezoneOffset()*60*1000);
+        }
+
 
         this.html('<div class="'+ prefix +'date">'
                     + '<span class="day"></span>'
