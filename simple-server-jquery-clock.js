@@ -32,7 +32,7 @@
         }
 
         if (settings.serverDatetime) {
-            $datetime = $datetime.setTime($datetime.getTime() + $datetime.getTimezoneOffset()*60*1000);
+            $datetime = new Date($datetime.setTime($datetime.getTime() + $datetime.getTimezoneOffset()*60*1000));
         }
 
 
